@@ -10,7 +10,7 @@ document.getElementById('drawButton').addEventListener('click', () => {
   const loser = drawer(names);
   document.getElementById(
     'resultText'
-  ).innerText = `${loser}님, 당첨을 축하합니다 ^.^`;
+  ).innerHTML = `<b>${loser}</b>님, 당첨을 축하합니다 ^.^`;
 
   // Run the test and show the results
   const testResults = drawerTester(names);
@@ -42,7 +42,7 @@ function drawerTester(arr) {
   const minOdd = ((counts['Dukov'] / 10000) * 100).toFixed(2);
   const hunOdd = ((counts['Sparrow'] / 10000) * 100).toFixed(2);
 
-  return `추첨기 주작 테스트 결과: Dukov: ${counts['Dukov']}회, ${minOdd}%. Sparrow: ${counts['Sparrow']}회, ${hunOdd}%.`;
+  return `추첨기 주작 테스트 결과\nDukov: ${counts['Dukov']}회, ${minOdd}%. Sparrow: ${counts['Sparrow']}회, ${hunOdd}%.`;
 }
 
 function showModal() {
